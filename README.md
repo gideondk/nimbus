@@ -111,8 +111,8 @@ and handling of these keys. In the `properties`, the actual value is contained w
  implicits are available to transform the basic Scala types to and back from Google Datastore `Values`: 
 
 ```scala 
-import com.xebia.nimbus.Path._
-import com.xebia.nimbus.datastore.model.Value._
+import nl.gideondk.nimbus.Path._
+import nl.gideondk.nimbus.datastore.model.Value._
 
 case class Person(name: String, age: Int)
 
@@ -174,7 +174,7 @@ for {
 Besides the look-up functionality, more extensive querying can be done using the _query_ API: 
 
 ```scala
-import com.xebia.nimbus.Query._
+import nl.gideondk.nimbus.Query._
 for {
     _ <- nimbus.upsert(Seq(mike, nikky, bob))
     q <- nimbus.query[Person](Q.kindOf('Person).filterBy('age > 6))
